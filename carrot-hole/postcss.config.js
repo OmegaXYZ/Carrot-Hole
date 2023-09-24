@@ -1,7 +1,11 @@
-// postcss.config.js
+
+
+// 在最外层创建 /postcss.config.js
+
 module.exports = {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
+    tailwindcss: { config: './tailwind.config.js' },
+    autoprefixer: { config: require('autoprefixer') }
+  }
 }
+

@@ -8,27 +8,9 @@
             <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 flex items-center">Log in</a>
         </div>
     </div>
-    <div class="background">
-        <!-- <header>
-            <p>hello header</p>
-        </header> -->
-        <main>
-            <div class="contain">
-                <p>hello main</p>
-                <p>{{ msg }}</p>
-            </div>
-            <!-- 主要内容 -->
-        </main>
-        <aside>
-
-        </aside>
-        <div class="bg-blue-500 text-white p-4">
-        This is a div with Tailwind CSS styles.
-        </div>
-        <!-- <footer>
-            <p>hello footer</p>
-        </footer> -->
-    </div>
+      <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1>
 </template>
 
 <script>
