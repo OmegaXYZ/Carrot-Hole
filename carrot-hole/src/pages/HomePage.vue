@@ -7,54 +7,11 @@
 
     </div>
     <div class="full-page-box">
-        <div class="contain-box" v-for="item in article">
-            <div class="article-box">
-                <div class="article-title">{{ article.title1 }}</div>
-                <div class="article-content">{{ article.content1 }}</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">{{ article.title2 }}</div>
-                <div class="article-content">文章内容2</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题3</div>
-                <div class="article-content">文章内容3</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题4</div>
-                <div class="article-content">文章内容4</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题5</div>
-                <div class="article-content">文章内容5</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题6</div>
-                <div class="article-content">文章内容6</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题7</div>
-                <div class="article-content">文章内容7</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题8</div>
-                <div class="article-content">文章内容8</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题1</div>
-                <div class="article-content">文章内容1</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题8</div>
-                <div class="article-content">文章内容8</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题9</div>
-                <div class="article-content">文章内容9</div>
-            </div>
-            <div class="article-box">
-                <div class="article-title">文章标题10</div>
-                <div class="article-content">文章内容10</div>
+        <div class="contain-box">
+            <div class="article-box" v-for="(item, index) in article" :key="item.id">
+                <div class="article-title">{{ item.title }}</div>
+                <div class="article-content">{{ item.content }}</div>
+                <!-- {{ console.log(item) }} -->
             </div>
         </div>
         <div class="aside-box">
@@ -69,33 +26,43 @@ export default {
     data() {
         return {
             article: [{
+                id: 1,
                 title: '文章标题1',
                 content: '文章内容1'
             }, {
+                id: 2,
                 title: '文章标题2',
                 content: '文章内容2'
             }, {
+                id: 3,
                 title: '文章标题3',
                 content: '文章内容3'
             }, {
+                id: 4,
                 title: '文章标题4',
                 content: '文章内容4'
             }, {
+                id: 5,
                 title: '文章标题5',
                 content: '文章内容5'
             }, {
+                id: 6,
                 title: '文章标题6',
                 content: '文章内容6'
             }, {
+                id: 7,
                 title: '文章标题7',
                 content: '文章内容7'
             }, {
+                id: 8,
                 title: '文章标题8',
                 content: '文章内容8'
             }, {
+                id: 9,
                 title: '文章标题9',
                 content: '文章内容9'
             }, {
+                id: 10,
                 title: '文章标题10',
                 content: '文章内容10'
             }
@@ -144,22 +111,22 @@ export default {
 
 .article-box {
     width: 100%;
-    height: auto;
+    height: 120px;
     /* 100%视窗高度 */
     background-color: #F6F6F6;
     border-bottom: 2px solid #ccc;
     /* 设置盒子背景颜色 */
     /* 放置方式：左对齐，位置合适 */
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .article-title {
     width: 100%;
-    height: 100px;
-    text-align: left;
+    height: 40px;
+    /* text-align: left; */
     /* 文字左对齐 */
     /* 100%视窗高度 */
     background-color: #F6F6F6;
@@ -174,8 +141,8 @@ export default {
 
 .article-content {
     width: 100%;
-    height: 100%;
-    text-align: left;
+    height: 50px;
+    /* text-align: left; */
     /* 文字左对齐 */
     /* 100%视窗高度 */
     background-color: #F6F6F6;
