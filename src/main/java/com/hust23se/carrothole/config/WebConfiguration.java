@@ -23,9 +23,9 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .excludePathPatterns("/css/**", "/img/**", "/js/**", "/error/**", "/zui/**", "/login");
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        //将所有/static/** 访问都映射到classpath:/static/ 目录下
-        registry.addResourceHandler("/static/**/").addResourceLocations("classpath:/static/");
-    }
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        //将所有/static/** 访问都映射到classpath:/static/ 目录下
+//        registry.addResourceHandler("/static/**/").addResourceLocations("classpath:/static/");
+//    }
 }

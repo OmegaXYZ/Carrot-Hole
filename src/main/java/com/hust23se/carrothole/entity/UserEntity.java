@@ -1,0 +1,40 @@
+package com.hust23se.carrothole.entity;
+
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+/**
+ * User entity
+ *
+ * @author MYH
+ * @date 2023-10-04
+ */
+@Data
+@NoArgsConstructor
+@TableName("user")
+public class UserEntity {
+
+    @TableId(value = "user_id")
+    private String userId;
+
+    @TableField("user_name")
+    private String userName;
+
+    @TableField("password")
+    private String password;
+
+    @TableField("level")
+    private int level;
+
+    @TableField("register_date")
+    private LocalDateTime registerDate;
+
+    @TableField("login_date")
+    private LocalDateTime loginDate;
+
+}
