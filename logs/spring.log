@@ -1,44 +1,13 @@
-2023-10-04 16:05:17.214  INFO 7992 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Starting CarrotholeApplication using Java 17.0.1 on LAPTOP-MLOEKGFM with PID 7992 (E:\Content\Carrot-Hole\target\classes started by MYH in E:\Content\Carrot-Hole)
-2023-10-04 16:05:17.217 DEBUG 7992 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Running with Spring Boot v2.7.16, Spring v5.3.30
-2023-10-04 16:05:17.218  INFO 7992 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : No active profile set, falling back to 1 default profile: "default"
-2023-10-04 16:05:17.245  INFO 7992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-10-04 16:05:17.245  INFO 7992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-10-04 16:05:17.874  INFO 7992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-10-04 16:05:17.880  INFO 7992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-04 16:05:17.880  INFO 7992 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-04 16:05:17.937  INFO 7992 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-04 16:05:17.938  INFO 7992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 692 ms
-2023-10-04 16:05:18.187  WARN 7992 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'resourceHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.web.util.pattern.PatternParseException: No more pattern data allowed after {*...} or ** pattern element
-2023-10-04 16:05:18.188  INFO 7992 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-10-04 16:05:18.197  INFO 7992 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2023-10-04 16:05:18.208 ERROR 7992 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Invalid mapping pattern detected: /static/**/
-       ^
-No more pattern data allowed after {*...} or ** pattern element
-
-Action:
-
-Fix this pattern in your application or switch to the legacy parser implementation with 'spring.mvc.pathmatch.matching-strategy=ant_path_matcher'.
-
-2023-10-04 16:05:38.500  INFO 10308 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Starting CarrotholeApplication using Java 17.0.1 on LAPTOP-MLOEKGFM with PID 10308 (E:\Content\Carrot-Hole\target\classes started by MYH in E:\Content\Carrot-Hole)
-2023-10-04 16:05:38.501 DEBUG 10308 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Running with Spring Boot v2.7.16, Spring v5.3.30
-2023-10-04 16:05:38.501  INFO 10308 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : No active profile set, falling back to 1 default profile: "default"
-2023-10-04 16:05:38.529  INFO 10308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-10-04 16:05:38.529  INFO 10308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-10-04 16:05:39.120  INFO 10308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-10-04 16:05:39.125  INFO 10308 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-04 16:05:39.126  INFO 10308 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-04 16:05:39.184  INFO 10308 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-04 16:05:39.184  INFO 10308 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 654 ms
-2023-10-04 16:05:39.478  INFO 10308 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-10-04 16:05:39.502  INFO 10308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-10-04 16:05:39.510  INFO 10308 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Started CarrotholeApplication in 1.24 seconds (JVM running for 1.724)
+2023-10-06 16:40:13.845  INFO 2912 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Starting CarrotholeApplication using Java 17.0.1 on LAPTOP-MLOEKGFM with PID 2912 (E:\Content\Carrot-Hole\target\classes started by MYH in E:\Content\Carrot-Hole)
+2023-10-06 16:40:13.848 DEBUG 2912 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Running with Spring Boot v2.7.16, Spring v5.3.30
+2023-10-06 16:40:13.848  INFO 2912 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-10-06 16:40:13.874  INFO 2912 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-06 16:40:13.874  INFO 2912 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-06 16:40:14.546  INFO 2912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-06 16:40:14.551  INFO 2912 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-06 16:40:14.551  INFO 2912 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-06 16:40:14.607  INFO 2912 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-06 16:40:14.607  INFO 2912 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 732 ms
+2023-10-06 16:40:14.908  INFO 2912 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-06 16:40:14.932  INFO 2912 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-06 16:40:14.940  INFO 2912 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Started CarrotholeApplication in 1.357 seconds (JVM running for 1.877)

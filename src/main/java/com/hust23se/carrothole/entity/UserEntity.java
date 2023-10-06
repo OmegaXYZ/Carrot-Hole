@@ -28,6 +28,11 @@ public class UserEntity {
     @TableField("password")
     private String password;
 
+    /**
+     * user level
+     * 0 represents administrator level
+     * 1 represents common user level
+     */
     @TableField("level")
     private int level;
 
