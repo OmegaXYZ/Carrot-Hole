@@ -3,8 +3,18 @@ package com.hust23se.carrothole.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hust23se.carrothole.entity.UserEntity;
 import com.hust23se.carrothole.util.UniqueKeyGenerator;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+/**
+ * auth service implementation
+ *
+ * @author MYH
+ * @date 2023-10-10
+ */
+@Service
+@Slf4j
 public class AuthServiceImpl implements AuthService{
 
     @Autowired
@@ -44,6 +54,9 @@ public class AuthServiceImpl implements AuthService{
         QueryWrapper<UserEntity> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("user_name",userName).eq("password",password);
         UserEntity userEntity = userService.getOne(userQueryWrapper);
+        if(userEntity!=null){
+            userEntity.setPassword(null);
+        }
         return userEntity;
     }
 }
