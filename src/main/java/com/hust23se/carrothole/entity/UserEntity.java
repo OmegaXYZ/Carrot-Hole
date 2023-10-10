@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -17,7 +19,10 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @TableName("user")
-public class UserEntity {
+public class UserEntity implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @TableId(value = "user_id")
     private String userId;

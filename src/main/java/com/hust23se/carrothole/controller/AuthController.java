@@ -2,6 +2,7 @@ package com.hust23se.carrothole.controller;
 
 import com.hust23se.carrothole.entity.UserEntity;
 import com.hust23se.carrothole.service.AuthService;
+import com.hust23se.carrothole.service.AuthServiceImpl;
 import com.hust23se.carrothole.util.ResultMap;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import java.util.Map;
 public class AuthController {
 
     @Autowired
-    AuthService authService;
+    AuthServiceImpl authService;
 
     @PostMapping("/register")
     public boolean register(@RequestBody Map<String,Object> idMap) throws Exception {
@@ -35,12 +36,12 @@ public class AuthController {
     @PostMapping("/login")
     public ResultMap login(@RequestBody Map<String,Object> idMap) throws Exception{
         try{
-            UserEntity user = authService.login(String.valueOf(idMap.get("userName")),String.valueOf(idMap.get("password")));
+            UserEntity userEntity = authService.login(String.valueOf(idMap.get("userName")),String.valueOf(idMap.get("password")));
             ResultMap resultMap = ResultMap.create();
-            if(user != null){
+            if(userEntity != null){
                 resultMap.setSuccess();
                 resultMap.setSuccessMsg("Login success");
-                resultMap.setKeyValue("user",user);
+                resultMap.setKeyValue("user", userEntity);
             }else{
                 resultMap.setError();
                 resultMap.setErrorMsg("Login failed");

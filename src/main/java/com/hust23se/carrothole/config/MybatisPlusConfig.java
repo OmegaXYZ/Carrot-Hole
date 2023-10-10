@@ -25,8 +25,6 @@ public class MybatisPlusConfig {
     /**
      * MybatisPlus插件配置
      * @return {@link MybatisPlusInterceptor }
-     * @author 高飞
-     * @date 2021/06/26
      */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {

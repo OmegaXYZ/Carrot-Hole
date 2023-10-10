@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 /**
  * auth service implementation
  *
@@ -18,7 +20,7 @@ import org.springframework.stereotype.Service;
 public class AuthServiceImpl implements AuthService{
 
     @Autowired
-    UserService userService;
+    UserServiceImpl userService;
 
     /**
      * register new user
@@ -30,14 +32,17 @@ public class AuthServiceImpl implements AuthService{
     @Override
     public boolean register(String userName, String password) {
         QueryWrapper<UserEntity> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.eq("user_name",userName);
         // repeated userName
-        if(userQueryWrapper.eq("user_name",userName) != null){
+        if(userService.getOne(userQueryWrapper) != null){
             return false;
         }
         UserEntity userEntity = new UserEntity();
         userEntity.setUserId(UniqueKeyGenerator.generateUniqueKey());
         userEntity.setUserName(userName);
         userEntity.setPassword(password);
+        userEntity.setRegisterDate(LocalDateTime.now());
+        userEntity.setLoginDate(LocalDateTime.now());
         userEntity.setLevel(1);
         return userService.save(userEntity);
     }
@@ -54,8 +59,9 @@ public class AuthServiceImpl implements AuthService{
         QueryWrapper<UserEntity> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("user_name",userName).eq("password",password);
         UserEntity userEntity = userService.getOne(userQueryWrapper);
-        if(userEntity!=null){
+        if(userEntity !=null){
             userEntity.setPassword(null);
+            userEntity.setLoginDate(LocalDateTime.now());
         }
         return userEntity;
     }
