@@ -952,3 +952,34 @@ java.lang.Exception: register error
 2023-10-10 12:47:07.328 DEBUG 4596 --- [http-nio-8080-exec-2] c.h.c.mapper.UserMapper.selectList       : <==      Total: 1
 2023-10-10 12:50:39.800  INFO 4596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-10-10 12:50:39.806  INFO 4596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-10 12:50:43.912  INFO 2716 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Starting CarrotholeApplication using Java 17.0.1 on LAPTOP-MLOEKGFM with PID 2716 (E:\Content\Carrot-Hole\target\classes started by MYH in E:\Content\Carrot-Hole)
+2023-10-10 12:50:43.913 DEBUG 2716 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Running with Spring Boot v2.7.16, Spring v5.3.30
+2023-10-10 12:50:43.913  INFO 2716 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-10-10 12:50:43.945  INFO 2716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-10 12:50:43.945  INFO 2716 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-10 12:50:44.534  INFO 2716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-10 12:50:44.539  INFO 2716 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-10 12:50:44.539  INFO 2716 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-10 12:50:44.592  INFO 2716 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-10 12:50:44.593  INFO 2716 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 647 ms
+2023-10-10 12:50:45.009  INFO 2716 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-10 12:50:45.030  INFO 2716 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-10 12:50:45.037  INFO 2716 --- [restartedMain] c.h.carrothole.CarrotholeApplication     : Started CarrotholeApplication in 1.359 seconds (JVM running for 1.808)
+2023-10-10 12:51:01.413  INFO 2716 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-10 12:51:01.413  INFO 2716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-10 12:51:01.414  INFO 2716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-10 12:51:01.420 DEBUG 2716 --- [http-nio-8080-exec-1] c.h.c.interceptor.AuthInterceptor        : AuthInterceptor preHandle，handler=com.hust23se.carrothole.controller.AuthController#register(Map)
+2023-10-10 12:51:01.492  INFO 2716 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-10 12:51:01.661  INFO 2716 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-10 12:51:01.667 DEBUG 2716 --- [http-nio-8080-exec-1] c.h.c.mapper.UserMapper.selectList       : ==>  Preparing: SELECT user_id,user_name,password,level,register_date,login_date FROM user WHERE (user_name = ?)
+2023-10-10 12:51:01.681 DEBUG 2716 --- [http-nio-8080-exec-1] c.h.c.mapper.UserMapper.selectList       : ==> Parameters: test(String)
+2023-10-10 12:51:01.692 DEBUG 2716 --- [http-nio-8080-exec-1] c.h.c.mapper.UserMapper.selectList       : <==      Total: 0
+2023-10-10 12:51:01.701 DEBUG 2716 --- [http-nio-8080-exec-1] c.h.carrothole.mapper.UserMapper.insert  : ==>  Preparing: INSERT INTO user ( user_id, user_name, password, level, register_date, login_date ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-10-10 12:51:01.701 DEBUG 2716 --- [http-nio-8080-exec-1] c.h.carrothole.mapper.UserMapper.insert  : ==> Parameters: 3f6b26d0ed1e423a(String), test(String), test(String), 1(Integer), 2023-10-10T12:51:01.699301400(LocalDateTime), 2023-10-10T12:51:01.699301400(LocalDateTime)
+2023-10-10 12:51:01.715 DEBUG 2716 --- [http-nio-8080-exec-1] c.h.carrothole.mapper.UserMapper.insert  : <==    Updates: 1
+2023-10-10 12:51:10.370 DEBUG 2716 --- [http-nio-8080-exec-6] c.h.c.interceptor.AuthInterceptor        : AuthInterceptor preHandle，handler=com.hust23se.carrothole.controller.AuthController#login(Map)
+2023-10-10 12:51:10.372 DEBUG 2716 --- [http-nio-8080-exec-6] c.h.c.mapper.UserMapper.selectList       : ==>  Preparing: SELECT user_id,user_name,password,level,register_date,login_date FROM user WHERE (user_name = ? AND password = ?)
+2023-10-10 12:51:10.373 DEBUG 2716 --- [http-nio-8080-exec-6] c.h.c.mapper.UserMapper.selectList       : ==> Parameters: test(String), test(String)
+2023-10-10 12:51:10.375 DEBUG 2716 --- [http-nio-8080-exec-6] c.h.c.mapper.UserMapper.selectList       : <==      Total: 1
+2023-10-10 12:51:57.467  INFO 2716 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-10 12:51:57.473  INFO 2716 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,7 +1,7 @@
 package com.hust23se.carrothole.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hust23se.carrothole.entity.UserEntity;
+import com.hust23se.carrothole.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -11,5 +11,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2023-10-04
  */
 @Mapper
-public interface UserMapper extends BaseMapper<UserEntity> {
+public interface UserMapper extends BaseMapper<User> {
 }

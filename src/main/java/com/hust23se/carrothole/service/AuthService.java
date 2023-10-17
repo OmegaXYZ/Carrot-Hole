@@ -1,6 +1,6 @@
 package com.hust23se.carrothole.service;
 
-import com.hust23se.carrothole.entity.UserEntity;
+import com.hust23se.carrothole.entity.User;
 
 public interface AuthService {
 
@@ -18,5 +18,5 @@ public interface AuthService {
      * @param password
      * @return
      */
-    public UserEntity login(String userName, String password);
+    public User login(String userName, String password);
 }

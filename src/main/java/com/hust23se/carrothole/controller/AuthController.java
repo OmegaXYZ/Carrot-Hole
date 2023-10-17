@@ -1,7 +1,6 @@
 package com.hust23se.carrothole.controller;
 
-import com.hust23se.carrothole.entity.UserEntity;
-import com.hust23se.carrothole.service.AuthService;
+import com.hust23se.carrothole.entity.User;
 import com.hust23se.carrothole.service.AuthServiceImpl;
 import com.hust23se.carrothole.util.ResultMap;
 import lombok.extern.slf4j.Slf4j;
@@ -36,12 +35,12 @@ public class AuthController {
     @PostMapping("/login")
     public ResultMap login(@RequestBody Map<String,Object> idMap) throws Exception{
         try{
-            UserEntity userEntity = authService.login(String.valueOf(idMap.get("userName")),String.valueOf(idMap.get("password")));
+            User user = authService.login(String.valueOf(idMap.get("userName")),String.valueOf(idMap.get("password")));
             ResultMap resultMap = ResultMap.create();
-            if(userEntity != null){
+            if(user != null){
                 resultMap.setSuccess();
                 resultMap.setSuccessMsg("Login success");
-                resultMap.setKeyValue("user", userEntity);
+                resultMap.setKeyValue("user", user);
             }else{
                 resultMap.setError();
                 resultMap.setErrorMsg("Login failed");

@@ -1,7 +1,7 @@
 package com.hust23se.carrothole.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.hust23se.carrothole.entity.UserEntity;
+import com.hust23se.carrothole.entity.User;
 import com.hust23se.carrothole.util.UniqueKeyGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,20 +31,20 @@ public class AuthServiceImpl implements AuthService{
      */
     @Override
     public boolean register(String userName, String password) {
-        QueryWrapper<UserEntity> userQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("user_name",userName);
         // repeated userName
         if(userService.getOne(userQueryWrapper) != null){
             return false;
         }
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUserId(UniqueKeyGenerator.generateUniqueKey());
-        userEntity.setUserName(userName);
-        userEntity.setPassword(password);
-        userEntity.setRegisterDate(LocalDateTime.now());
-        userEntity.setLoginDate(LocalDateTime.now());
-        userEntity.setLevel(1);
-        return userService.save(userEntity);
+        User user = new User();
+        user.setUserId(UniqueKeyGenerator.generateUniqueKey());
+        user.setUserName(userName);
+        user.setPassword(password);
+        user.setRegisterDate(LocalDateTime.now());
+        user.setLoginDate(LocalDateTime.now());
+        user.setLevel(1);
+        return userService.save(user);
     }
 
     /**
@@ -55,14 +55,14 @@ public class AuthServiceImpl implements AuthService{
      * @return
      */
     @Override
-    public UserEntity login(String userName, String password) {
-        QueryWrapper<UserEntity> userQueryWrapper = new QueryWrapper<>();
+    public User login(String userName, String password) {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("user_name",userName).eq("password",password);
-        UserEntity userEntity = userService.getOne(userQueryWrapper);
-        if(userEntity !=null){
-            userEntity.setPassword(null);
-            userEntity.setLoginDate(LocalDateTime.now());
+        User user = userService.getOne(userQueryWrapper);
+        if(user !=null){
+            user.setPassword(null);
+            user.setLoginDate(LocalDateTime.now());
         }
-        return userEntity;
+        return user;
     }
 }
