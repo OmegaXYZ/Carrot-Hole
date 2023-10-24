@@ -11,6 +11,13 @@ import DashboardHome from "@/pages/Home.vue";
 import store from "./store/index.js";
 import "@/assets/css/tailwind.css";
 
+//导入markdown
+import VueMarkdownEditor from '@kangc/v-md-editor';
+import '@kangc/v-md-editor/lib/style/base-editor.css';
+import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+
+
 // Vue.config.productionTip = false
 // Vue.use(Router)
 import { createRouter, createWebHistory } from "vue-router";
@@ -30,6 +37,7 @@ const router = createRouter({
     },
   ],
 });
+
 
 // 导出路由实例
 export default router;
