@@ -10,4 +10,6 @@ import com.hust23se.carrothole.entity.Post;
  * @date 2023-10-17
  */
 public interface PostService extends IService<Post> {
+
+    public Post getPostByTitle(String title);
 }

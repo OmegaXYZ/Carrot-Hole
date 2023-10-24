@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -50,6 +51,30 @@ public class PostController {
             }
         }catch (Exception e){
             throw new Exception("get post error");
+        }
+    }
+
+    @GetMapping("/search")
+    public ResultMap searchPost(@RequestBody Map<String,Object> idMap) throws Exception {
+        try{
+            Post post = postService.getPostByTitle(String.valueOf(idMap.get("postTitle")));
+            if(post == null){
+                return ResultMap.create().setError().setErrorMsg("Not found");
+            }else{
+                return ResultMap.create().setSuccess().setSuccessMsg("Success").setKeyValue("post",post);
+            }
+        }catch (Exception e){
+            throw new Exception("search post error");
+        }
+    }
+
+    @GetMapping("/getPostList")
+    public ResultMap getPostList() throws Exception{
+        try{
+            List<Post> postList= postService.list();
+            return ResultMap.create().setSuccess().setSuccessMsg("Success").setKeyValue("postList",postList);
+        }catch (Exception e){
+            throw new Exception("search post list error");
         }
     }
 }

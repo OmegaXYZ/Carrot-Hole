@@ -1,10 +1,13 @@
 package com.hust23se.carrothole.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hust23se.carrothole.entity.Post;
 import com.hust23se.carrothole.mapper.PostMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.sql.Wrapper;
 
 /**
  * post service implementation
@@ -15,4 +18,11 @@ import org.springframework.stereotype.Service;
 @Service("PostServiceImpl")
 @Slf4j
 public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements PostService{
+
+    @Override
+    public Post getPostByTitle(String title) {
+        QueryWrapper<Post> postQueryWrapper = new QueryWrapper<>();
+        postQueryWrapper.eq("post_title",title);
+        return this.getOne(postQueryWrapper);
+    }
 }
