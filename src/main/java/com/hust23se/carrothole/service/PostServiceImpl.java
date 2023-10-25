@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.sql.Wrapper;
+import java.util.List;
 
 /**
  * post service implementation
@@ -24,5 +25,12 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         QueryWrapper<Post> postQueryWrapper = new QueryWrapper<>();
         postQueryWrapper.eq("post_title",title);
         return this.getOne(postQueryWrapper);
+    }
+
+    @Override
+    public List<Post> getPostByUserId(String userId) {
+        QueryWrapper<Post> postQueryWrapper = new QueryWrapper<>();
+        postQueryWrapper.eq("user_id",userId);
+        return this.list(postQueryWrapper);
     }
 }

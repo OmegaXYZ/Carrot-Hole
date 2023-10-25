@@ -77,4 +77,14 @@ public class PostController {
             throw new Exception("search post list error");
         }
     }
+
+    @GetMapping("/getMyPost")
+    public ResultMap getMyPost(@RequestBody Map<String,Object> idMap) throws Exception{
+        try{
+            List<Post> postList= postService.getPostByUserId(String.valueOf(idMap.get("userId")));
+            return ResultMap.create().setSuccess().setSuccessMsg("Success").setKeyValue("postList",postList);
+        }catch (Exception e){
+            throw new Exception("search post list error");
+        }
+    }
 }
