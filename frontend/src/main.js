@@ -12,10 +12,14 @@ import store from "./store/index.js";
 import "@/assets/css/tailwind.css";
 
 //导入markdown
-import VueMarkdownEditor from '@kangc/v-md-editor';
-import '@kangc/v-md-editor/lib/style/base-editor.css';
-import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
-import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+// import VueMarkdownEditor from '@kangc/v-md-editor';
+// import '@kangc/v-md-editor/lib/style/base-editor.css';
+// import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+// import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+// import VueMarkdownEditor from '@kangc/v-md-editor';
+// import '@kangc/v-md-editor/lib/style/base-editor.css';
+// import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+// import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 
 
 // Vue.config.productionTip = false
@@ -46,5 +50,5 @@ const app = createApp(App);
 
 app.use(router); // 使用路由
 app.use(store); // 使用 Vuex
-
+//app.use(VueMarkdownEditor);
 app.mount("#app"); // 挂载 Vue 3 应用到 HTML 元素
