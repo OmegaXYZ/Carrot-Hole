@@ -5,8 +5,8 @@ import App from "./App.vue";
 
 // createApp(App).mount('#app')
 
-import Dashboard from "@/components/Dashboard.vue";
-import DashboardHome from "@/pages/Home.vue";
+import board from "@/components/board.vue";
+import boardHome from "@/pages/Home.vue";
 
 import store from "./store/index.js";
 import "@/assets/css/tailwind.css";
@@ -30,13 +30,14 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", redirect: { name: "DashboardHome" } },
     {
-      path: "/dashboard",
-      component: Dashboard,
+      path: "/board",
+      component: board,
       children: [
-        { path: "/", redirect: { name: "DashboardHome" } },
-        { path: "home", name: "DashboardHome", component: DashboardHome },
+        { path: "/", redirect: { name: "Home" } },
+        { path: "home", name: "Home", component: boardHome },
+        { path: "post", name: "Post", component: () => import("@/pages/Post.vue") },
+        { path: ""}
       ],
     },
   ],
