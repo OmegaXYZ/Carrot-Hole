@@ -11,35 +11,31 @@ import boardHome from "@/pages/Home.vue";
 import store from "./store/index.js";
 import "@/assets/css/tailwind.css";
 
-//导入markdown
-// import VueMarkdownEditor from '@kangc/v-md-editor';
-// import '@kangc/v-md-editor/lib/style/base-editor.css';
-// import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
-// import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
-// import VueMarkdownEditor from '@kangc/v-md-editor';
-// import '@kangc/v-md-editor/lib/style/base-editor.css';
-// import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
-// import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
+import HomePage from "@/components/HomePage.vue"
+import DashboardHome from '@/pages/Home.vue'
+import PostPage from '@/pages/PostPage.vue'
 
 
 // Vue.config.productionTip = false
 // Vue.use(Router)
 import { createRouter, createWebHistory } from "vue-router";
 
+
 // 创建路由实例
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    {
-      path: "/board",
-      component: board,
-      children: [
-        { path: "/", redirect: { name: "Home" } },
-        { path: "home", name: "Home", component: boardHome },
-        { path: "post", name: "Post", component: () => import("@/pages/Post.vue") },
-        { path: ""}
-      ],
+    { path: '/', redirect: { name: 'DashboardHome' } },
+    { path: '/dashboard', component: HomePage, children: [
+        { path: '/', redirect: { name: 'DashboardHome' } },
+        { path: 'home', name: 'DashboardHome', component: DashboardHome }
+      ]
     },
+    { path: '/Post', component: HomePage, children: [
+        { path: '/', redirect: { name: 'PostPage' } },
+        { path: 'home', name: 'PostPage', component: PostPage}
+      ]
+    }
   ],
 });
 

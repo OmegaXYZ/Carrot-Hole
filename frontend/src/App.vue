@@ -1,12 +1,12 @@
 <template>
     <div id="app">
-        <router-view />
+      <router-view />
     </div>
-</template>
+  </template>
 
-<script>
-// import Dashboard from './components/Dashboard.vue';
-export default {
+  <script>
+  // import Dashboard from './components/Dashboard.vue';
+  export default {
     name: 'app'
-}
-</script>
+  }
+  </script>
