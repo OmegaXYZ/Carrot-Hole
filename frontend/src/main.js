@@ -34,6 +34,7 @@ const router = createRouter({
     { path: '/Post', component: HomePage, children: [
         { path: '/', redirect: { name: 'PostPage' } },
         { path: 'home', name: 'PostPage', component: PostPage}
+
       ]
     }
   ],
