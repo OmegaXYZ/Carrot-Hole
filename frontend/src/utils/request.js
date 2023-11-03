@@ -1,13 +1,11 @@
-import MyAxios from "./axios";
+import myAxios from "./axios";
 
 //根据帖子ID获取帖子
 export function getPostByIdAPI(postId) {
-    const state = 0;
-    return MyAxios({
+    return myAxios({
         url:`/post/get`,
         method:'get',
-        data:{postId:`${postId}`},
-        params:{interfaceState:state}
+        data:{postId:1},
     }).then(res => {
         console.log(res)
     });
@@ -24,6 +22,9 @@ export function getChildPostAPI(postId,childId) {
     }).then(res => {
         console.log(res)
     });
+}
+export function helloworld(){
+    console.log("helloworld")
 }
 // export const getPostByIdAPI = async (postId) => {
 //     return MyAxios({
