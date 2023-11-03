@@ -11,7 +11,16 @@
 </template>
 
 <script>
+
+
 export default {
-  name: 'Footer'
-}
+    name : "Footer",
+    data() {
+        return {
+            post: "hello",
+            text: 'helloFooter',
+            markdown: "### 标题",
+        };
+    },
+};
 </script>
