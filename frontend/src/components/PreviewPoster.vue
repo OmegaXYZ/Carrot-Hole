@@ -1,6 +1,6 @@
 <template>
-    <div class="h-40 w-full lg:w-4/5 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2"> 
-        <div class="rounded-md h-1/2 w-full bg-opacity-25">
+    <div class="h-40 w-full lg:w-4/5 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2">
+        <div class="rounded-md h-1/4 w-full bg-opacity-25">
             <p class="text-3xl font-semibold">
                 <router-link to="/Post/home">
                     前往关于页面
@@ -12,7 +12,7 @@
                 <p class="text-2xl">昨夜朱楼梦</p>
                 <p class="text-md">光与影的对白</p>
             </div>
-        
+
     </div>
 </template>
 
@@ -21,6 +21,6 @@
 export default {
   name: 'PreviewPoster',
 
-  
+
 }
 </script>
