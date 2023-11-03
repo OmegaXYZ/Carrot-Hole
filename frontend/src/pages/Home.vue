@@ -22,6 +22,8 @@
 
             <div class="flex flex-wrap -mx-3">
                 <PreviewPoster />
+
+                <PreviewPoster />
             </div>
 
     </div>
@@ -30,6 +32,7 @@
 <script>
 import {Chart} from 'chart.js'
 import PreviewPoster from '../components/PreviewPoster.vue'
+
 
 export default {
     name: 'DashboardHome',

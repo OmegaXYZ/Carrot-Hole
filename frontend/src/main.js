@@ -7,6 +7,7 @@ import App from './App.vue'
 
 import HomePage from "@/components/HomePage.vue"
 import DashboardHome from '@/pages/Home.vue'
+import PostPage from '@/pages/PostPage.vue'
 
 import store from './store/index.js'
 import '@/assets/css/tailwind.css'
@@ -14,6 +15,7 @@ import '@/assets/css/tailwind.css'
 // Vue.config.productionTip = false
 // Vue.use(Router)
 import { createRouter, createWebHistory } from 'vue-router';
+
 
 // 创建路由实例
 const router = createRouter({
@@ -23,6 +25,11 @@ const router = createRouter({
     { path: '/dashboard', component: HomePage, children: [
         { path: '/', redirect: { name: 'DashboardHome' } },
         { path: 'home', name: 'DashboardHome', component: DashboardHome }
+      ]
+    },
+    { path: '/Post', component: HomePage, children: [
+        { path: '/', redirect: { name: 'PostPage' } },
+        { path: 'home', name: 'PostPage', component: PostPage}
       ]
     }
   ],
