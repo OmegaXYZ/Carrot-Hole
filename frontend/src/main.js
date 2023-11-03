@@ -25,11 +25,6 @@ const router = createRouter({
         { path: 'home', name: 'DashboardHome', component: DashboardHome }
       ]
     }
-    // { path: '/', component: Dashboard, children: [
-    //   { path: '/', redirect: { name: 'DashboardHome' } },
-    //   { path: 'home', name: 'DashboardHome', component: DashboardHome }
-    // ]
-  
   ],
 });
 
