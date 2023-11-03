@@ -5,7 +5,7 @@ import App from './App.vue'
 
 // createApp(App).mount('#app')
 
-import Dashboard from "@/components/Dashboard.vue"
+import HomePage from "@/components/HomePage.vue"
 import DashboardHome from '@/pages/Home.vue'
 
 import store from './store/index.js'
@@ -20,7 +20,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', redirect: { name: 'DashboardHome' } },
-    { path: '/dashboard', component: Dashboard, children: [
+    { path: '/dashboard', component: HomePage, children: [
         { path: '/', redirect: { name: 'DashboardHome' } },
         { path: 'home', name: 'DashboardHome', component: DashboardHome }
       ]

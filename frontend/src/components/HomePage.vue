@@ -27,7 +27,7 @@
   import Footer from './Footer.vue'
   
   export default {
-    name: 'Dashboard',
+    name: 'HomePage',
     computed: {
       ...mapState(['sideBarOpen'])
     },
