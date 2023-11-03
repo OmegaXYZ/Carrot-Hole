@@ -23,8 +23,13 @@ export function getChildPostAPI(postId,childId) {
         console.log(res)
     });
 }
+export function testGetAPI(){
+    console.log("testGetAPI")
+    return 1;
+}
 export function helloworld(){
     console.log("helloworld")
+    return 1;
 }
 // export const getPostByIdAPI = async (postId) => {
 //     return MyAxios({
