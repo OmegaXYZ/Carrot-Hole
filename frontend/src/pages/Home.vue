@@ -20,7 +20,7 @@
               <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">发布主题帖</button>
             </div>
 
-            <div class="flex flex-wrap -mx-3">
+            <div class="flex flex-wrap -mx-3 items-center justify-center">
                 <PreviewPoster />
 
                 <PreviewPoster />
