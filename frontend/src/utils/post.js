@@ -1,18 +1,22 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://1.94.32.182:8000/api';
+const postPublishUrl = 'http://localhost:8080/post/publish';
+const headers = {
+    "Content-Type": "application/json",
+  };
 
-const uploadPost = async (userId, timeData, content) => {
-    try {
-        const response = await axios.post(`${BASE_URL}/api/posts`, {
-            userId,
-            timeData,
-            content,
-        });
-        return response.data;
-    } catch (error) {
-        console.error(error);
-    }
-};
 
-export default uploadPost;
+export function postPublishAPI(postTitle,postContent,userId) {
+    return axios.post(
+        postPublishUrl,
+      {
+        postTitle: postTitle,
+        postContent:postContent,
+        userId:userId,
+      },
+      { headers }
+    );
+  }
+
+
+export default {postPublishAPI};
