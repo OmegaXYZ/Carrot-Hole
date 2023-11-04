@@ -23,7 +23,6 @@
 
 <script>
 
-import { testGetAPI } from '../utils/request';
 export default {
   name: 'FullPoster',
   data(){

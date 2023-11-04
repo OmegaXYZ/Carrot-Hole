@@ -1,43 +1,27 @@
-import myAxios from "./axios";
+import axios from 'axios';
+const apiUrl = 'http://127.0.0.1:8080/post/get';
+const baseUrl = 'http://127.0.0.1:8080/';
+const headers = {
+'Content-Type': 'application/json',
 
-//根据帖子ID获取帖子
+};
+
+const data = {
+postId: 1,
+};
+
+axios.post(apiUrl, data, { headers })
+.then(response => {
+    console.log('响应数据：', response.data);
+})
+.catch(error => {
+    console.error('请求失败：', error);
+});
+
 export function getPostByIdAPI(postId) {
-    return myAxios({
-        url:`/post/get`,
-        method:'get',
-        data:{postId:1},
-    }).then(res => {
-        console.log(res)
-    });
+    return axios.post(apiUrl, data, { headers });
 }
 
-//根据帖子ID和回复ID获取回复
-export function getChildPostAPI(postId,childId) {
-    const state = 1;
-    return MyAxios({
-        url:`/api/post`,
-        method:'post',
-        data:{ID:`${postId}`,childID:`${childId}`},
-        params:{interfaceState:state}
-    }).then(res => {
-        console.log(res)
-    });
-}
-export function testGetAPI(){
-    console.log("testGetAPI")
-    return 1;
-}
-export function helloworld(){
-    console.log("helloworld")
-    return 1;
-}
-// export const getPostByIdAPI = async (postId) => {
-//     return MyAxios({
-//         url:`/api/post`,
-//         method:'post',
-//         data:{ID:`${postId}`},
-//         params:{interfaceState:state}
-//     }).then(res => {
-//         console.log(res)
-//     });
-// };
+export default {
+    getPostByIdAPI,
+};

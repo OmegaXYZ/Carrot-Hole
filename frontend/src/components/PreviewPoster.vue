@@ -18,15 +18,12 @@
 </template>
 
 <script>
-import { testGetAPI } from '../utils/request';
 export default {
   name: 'PreviewPoster',
   data(){
     return{
         user:"昨夜朱楼梦  ",
         postText:"  光与影的对白qwertyyipasdfggjklzcxbnm\nsadsaasdsadadsdas之前有虐鼠老哥做过实验，给仓鼠大爷喝了换算到人类的体重，大概相当于20多瓶茅台的巨量白酒。结果鼠大爷睡了一觉就又活蹦乱跳了。",
-        postId:testGetAPI()
-
     }
   }
 

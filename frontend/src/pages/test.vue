@@ -2,8 +2,8 @@
     hello
 </template>
 <script>
-    import {helloworld,getPostByIdAPI} from '../utils/request.js';
-    helloworld();
+    import {getPostByIdAPI} from '../utils/request.js';
+    // helloworld();
 
     import axios from 'axios';
 
@@ -20,6 +20,13 @@
 
     axios.post(apiUrl, data, { headers })
     .then(response => {
+        console.log('响应数据：', response.data);
+    })
+    .catch(error => {
+        console.error('请求失败：', error);
+    });
+
+    getPostByIdAPI(1).then(response => {
         console.log('响应数据：', response.data);
     })
     .catch(error => {
