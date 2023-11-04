@@ -2,31 +2,38 @@
     hello
 </template>
 <script>
-    import {getPostByIdAPI} from '../utils/request.js';
+    import {getPostByIdAPI,getPostListAPI} from '../utils/request.js';
     // helloworld();
 
-    import axios from 'axios';
+    // import axios from 'axios';
 
-    const apiUrl = 'http://127.0.0.1:8080/post/get';
+    // const apiUrl = 'http://127.0.0.1:8080/post/get';
 
-    const headers = {
-    'Content-Type': 'application/json',
+    // const headers = {
+    // 'Content-Type': 'application/json',
 
-    };
+    // };
 
-    const data = {
-    postId: 1,
-    };
+    // const data = {
+    // postId: 1,
+    // };
 
-    axios.post(apiUrl, data, { headers })
-    .then(response => {
+    // axios.post(apiUrl, data, { headers })
+    // .then(response => {
+    //     console.log('响应数据：', response.data);
+    // })
+    // .catch(error => {
+    //     console.error('请求失败：', error);
+    // });
+
+    getPostByIdAPI(0).then(response => {
         console.log('响应数据：', response.data);
     })
     .catch(error => {
         console.error('请求失败：', error);
     });
 
-    getPostByIdAPI(1).then(response => {
+    getPostListAPI().then(response => {
         console.log('响应数据：', response.data);
     })
     .catch(error => {

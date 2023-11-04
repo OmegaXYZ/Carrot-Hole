@@ -1,27 +1,31 @@
-import axios from 'axios';
-const apiUrl = 'http://127.0.0.1:8080/post/get';
-const baseUrl = 'http://127.0.0.1:8080/';
+import axios from "axios";
+const getPostByIdAPIUrl = "http://127.0.0.1:8080/post/get";
+const getPostListAPIUrl = "http://localhost:8080/post/getPostList";
+const baseUrl = "http://127.0.0.1:8080/";
 const headers = {
-'Content-Type': 'application/json',
-
+  "Content-Type": "application/json",
 };
 
 const data = {
-postId: 1,
+  postId: 1,
 };
 
-axios.post(apiUrl, data, { headers })
-.then(response => {
-    console.log('响应数据：', response.data);
-})
-.catch(error => {
-    console.error('请求失败：', error);
-});
-
 export function getPostByIdAPI(postId) {
-    return axios.post(apiUrl, data, { headers });
+  return axios.post(
+    getPostByIdAPIUrl,
+    {
+      postId: postId,
+    },
+    { headers }
+  );
 }
-
+export function getPostListAPI() {
+    return axios.get(
+        getPostListAPIUrl,
+        { headers }
+    )
+}
 export default {
     getPostByIdAPI,
+    getPostListAPI,
 };
