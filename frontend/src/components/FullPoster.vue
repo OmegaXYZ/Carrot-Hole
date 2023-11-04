@@ -11,13 +11,13 @@
 
         <div class="flex-grow flex flex-wrap p-3">
             <p> 大家什么时候举办线下聚会？一群猪他飞上了天 一群海盗淹死在沙滩 我的儿子倍做成了金钱，摇曳的花枯萎在河岸哪。。。允许我家的佣人先富起来</p>
-            
+
             <!-- <div class="border-t-2 border-cyan-600"></div> -->
             <div class="w-full border-t-2 border-cyan-600"></div>
             <div class="mt-auto flex justify-end" >
                 <p>1楼 2023-11-4 18:23</p>
             </div>
-            
+
         </div>
     </div>
 
@@ -26,9 +26,9 @@
 <script>
 // import showReviewPart from "./Footer.vue"
 
-
+import { testGetAPI } from '../utils/request';
 export default {
-  name: 'FullPoster',  
+  name: 'FullPoster',
 //   mounted() {
 //     showReviewPart = true;
 //   },
