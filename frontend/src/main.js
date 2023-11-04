@@ -14,7 +14,7 @@ import "@/assets/css/tailwind.css";
 import HomePage from "@/components/HomePage.vue"
 import DashboardHome from '@/pages/Home.vue'
 import PostPage from '@/pages/PostPage.vue'
-
+import test from '@/pages/test.vue'
 
 // Vue.config.productionTip = false
 // Vue.use(Router)
@@ -33,7 +33,8 @@ const router = createRouter({
     },
     { path: '/Post', component: HomePage, children: [
         { path: '/', redirect: { name: 'PostPage' } },
-        { path: 'home', name: 'PostPage', component: PostPage}
+        { path: 'home', name: 'PostPage', component: PostPage},
+        { path: 'test', name: 'test', component: test}
       ]
     }
   ],
