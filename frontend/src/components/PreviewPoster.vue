@@ -2,7 +2,7 @@
     <div class="h-35 w-full lg:w-4/5 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2">
         <div class="rounded-md h-1/4 w-full bg-opacity-25 mb-5">
             <p class="text-3xl font-semibold">
-                <router-link to="/Post">
+                <router-link to="/Post/home">
                     前往对应帖子详情页面
                 </router-link>
             </p>

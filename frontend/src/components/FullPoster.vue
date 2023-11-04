@@ -24,8 +24,13 @@
 </template>
 
 <script>
+// import showReviewPart from "./Footer.vue"
+
 
 export default {
   name: 'FullPoster',  
+//   mounted() {
+//     showReviewPart = true;
+//   },
 }
 </script>

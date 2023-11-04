@@ -17,8 +17,22 @@
 
             <div class="flex flex-wrap -mx-3 items-center justify-center">
                 <FullPoster />
-
+                <FullPoster />
+                <FullPoster />
                 <!-- <PreviewPoster /> -->
+            </div>
+
+            <div class="bg-white rounded-lg border-t-2 p-6 m-6 shadow-md" v-if="ShowReviewPart">
+                <form>
+                    <div class="flex items-start">
+                        <div class="flex-1">
+                            <div class="mb-2">
+                                <textarea name="commentText" placeholder="发表一条友善的评论" class="w-full p-2 rounded border border-gray-300" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">提交评论</button>
+                        </div>
+                    </div>
+                </form>
             </div>
 
     </div>
@@ -34,6 +48,7 @@ export default {
     name: 'PostPage',
     data() {
         return {
+            ShowReviewPart: true,
             buyersData: {
                 type: 'line',
                 data: {

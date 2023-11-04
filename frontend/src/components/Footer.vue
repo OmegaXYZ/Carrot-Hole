@@ -11,8 +11,9 @@
 </template>
 
 <script>
+// import Vue from 'vue';
 
-
+// export let showReviewPart = false;
 export default {
     name : "Footer",
     data() {
@@ -20,7 +21,13 @@ export default {
             post: "hello",
             text: 'helloFooter',
             markdown: "### 标题",
+            showDiv: false
         };
     },
+    methods: {
+        toggleShowDiv() {
+        this.showDiv = !this.showDiv;
+        },
+  },
 };
 </script>
