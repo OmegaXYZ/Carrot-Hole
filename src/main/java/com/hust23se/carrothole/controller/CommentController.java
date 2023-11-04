@@ -36,7 +36,7 @@ public class CommentController {
         }
     }
 
-    @GetMapping("/getPostComment")
+    @PostMapping("/getPostComment")
     public ResultMap getPostComment(@RequestBody Map<String,Object> idMap) throws Exception{
         try{
             List<Comment> commentList = commentService.getCommentsByPostId(String.valueOf(idMap.get("postId")));

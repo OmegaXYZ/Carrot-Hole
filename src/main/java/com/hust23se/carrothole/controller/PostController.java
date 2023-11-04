@@ -40,7 +40,7 @@ public class PostController {
         }
     }
 
-    @GetMapping("/get")
+    @PostMapping("/get")
     public ResultMap getPost(@RequestBody Map<String,Object> idMap) throws Exception{
         try{
             Post post = postService.getById(String.valueOf(idMap.get("postId")));
@@ -54,7 +54,7 @@ public class PostController {
         }
     }
 
-    @GetMapping("/search")
+    @PostMapping("/search")
     public ResultMap searchPost(@RequestBody Map<String,Object> idMap) throws Exception {
         try{
             Post post = postService.getPostByTitle(String.valueOf(idMap.get("postTitle")));
@@ -78,7 +78,7 @@ public class PostController {
         }
     }
 
-    @GetMapping("/getMyPost")
+    @PostMapping("/getMyPost")
     public ResultMap getMyPost(@RequestBody Map<String,Object> idMap) throws Exception{
         try{
             List<Post> postList= postService.getPostByUserId(String.valueOf(idMap.get("userId")));
