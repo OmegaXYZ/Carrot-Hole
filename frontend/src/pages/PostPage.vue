@@ -46,6 +46,7 @@ import FullPoster from '../components/FullPoster.vue'
 
 export default {
     name: 'PostPage',
+
     data() {
         return {
             ShowReviewPart: true,
