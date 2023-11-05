@@ -1,43 +1,45 @@
-<template>
-    hello
-</template>
+<template>hello</template>
 <script>
-    import {getPostByIdAPI,getPostListAPI} from '../utils/request.js';
-    // helloworld();
+import {
+  getPostByIdAPI,
+  getPostListAPI,
+  getPostCommentListAPI,
+} from "../utils/request.js";
+import { postPublishAPI, commentPublishAPI } from "../utils/post.js";
+// getPostByIdAPI(0).then(response => {
+//     console.log('响应数据：', response.data);
+// })
+// .catch(error => {
+//     console.error('请求失败：', error);
+// });
 
-    // import axios from 'axios';
+// getPostListAPI().then(response => {
+//     console.log('响应数据：', response.data);
+// })
+// .catch(error => {
+//     console.error('请求失败：', error);
+// });
 
-    // const apiUrl = 'http://127.0.0.1:8080/post/get';
+// getPostCommentListAPI(0).then(response => {
+//     console.log('响应数据：', response.data);
+// })
+// .catch(error => {
+//     console.error('请求失败：', error);
+// });
 
-    // const headers = {
-    // 'Content-Type': 'application/json',
+postPublishAPI(0, "title", "content")
+  .then((response) => {
+    console.log("响应数据：", response.data);
+  })
+  .catch((error) => {
+    console.error("请求失败：", error);
+  });
 
-    // };
-
-    // const data = {
-    // postId: 1,
-    // };
-
-    // axios.post(apiUrl, data, { headers })
-    // .then(response => {
-    //     console.log('响应数据：', response.data);
-    // })
-    // .catch(error => {
-    //     console.error('请求失败：', error);
-    // });
-
-    getPostByIdAPI(0).then(response => {
-        console.log('响应数据：', response.data);
-    })
-    .catch(error => {
-        console.error('请求失败：', error);
-    });
-
-    getPostListAPI().then(response => {
-        console.log('响应数据：', response.data);
-    })
-    .catch(error => {
-        console.error('请求失败：', error);
-    });
-        //getPostByIdAPI(1);
+commentPublishAPI(0, 0, "commentTest1")
+  .then((response) => {
+    console.log("响应数据：", response.data);
+  })
+  .catch((error) => {
+    console.error("请求失败：", error);
+  });
 </script>
