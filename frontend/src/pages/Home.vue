@@ -17,11 +17,14 @@
         </nav>
         <!-- breadcrumb end -->
 
-        <div class="lg:flex justify-between items-center mb-6">
-            <p class="text-2xl font-semibold mb-2 lg:mb-0">早上好, 洛天依小姐!</p>
-            <button
-                class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">发布主题帖</button>
-        </div>
+            <div class="lg:flex justify-between items-center mb-6">
+              <p class="text-2xl font-semibold mb-2 lg:mb-0">早上好, 洛天依小姐!</p>
+              <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">
+                <router-link to="/ReleasePost/home">
+                    发布主题帖
+                </router-link>
+              </button>
+            </div>
 
         <div v-for="(item, index) in 10" class="flex flex-wrap -mx-3 items-center justify-center">
             <div class="h-35 w-full lg:w-4/5 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2">
