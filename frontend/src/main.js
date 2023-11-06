@@ -22,38 +22,38 @@ import test from '@/pages/test.vue'
 // Vue.use(Router)
 import { createRouter, createWebHistory } from "vue-router";
 
-
+import router from "./router";
 // 创建路由实例
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/', redirect: { name: 'DashboardHome' } },
-    { path: '/dashboard', component: HomePage, children: [
-        { path: '/', redirect: { name: 'DashboardHome' } },
-        { path: 'home', name: 'DashboardHome', component: DashboardHome }
-      ]
-    },
-    { path: '/Post', component: HomePage, children: [
-        { path: '/', redirect: { name: 'PostPage' } },
-        { path: 'home', name: 'PostPage', component: PostPage},
-        { path: 'test', name: 'test', component: test}
-      ]
-    },
-    { path: '/ReleasePost', component: HomePage, children: [
-      { path: '/', redirect: { name: 'ReleasePost' } },
-      { path: 'home', name: 'ReleasePost', component: ReleasePost }
-      ]
-    },
-    { path: '/LoginPage', component: LoginPage, children: [
-      { path: '/', name: 'LoginPage'}
-      ]
-    },
-  ],
-});
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes: [
+//     { path: '/', redirect: { name: 'DashboardHome' } },
+//     { path: '/dashboard', component: HomePage, children: [
+//         { path: '/', redirect: { name: 'DashboardHome' } },
+//         { path: 'home', name: 'DashboardHome', component: DashboardHome }
+//       ]
+//     },
+//     { path: '/Post', component: HomePage, children: [
+//         { path: '/', redirect: { name: 'PostPage' } },
+//         { path: 'home', name: 'PostPage', component: PostPage},
+//         { path: 'test', name: 'test', component: test}
+//       ]
+//     },
+//     { path: '/ReleasePost', component: HomePage, children: [
+//       { path: '/', redirect: { name: 'ReleasePost' } },
+//       { path: 'home', name: 'ReleasePost', component: ReleasePost }
+//       ]
+//     },
+//     { path: '/LoginPage', component: LoginPage, children: [
+//       { path: '/', name: 'LoginPage'}
+//       ]
+//     },
+//   ],
+// });
 
 
 // 导出路由实例
-export default router;
+// export default router;
 
 const app = createApp(App);
 

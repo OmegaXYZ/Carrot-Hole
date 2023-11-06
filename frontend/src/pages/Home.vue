@@ -32,15 +32,15 @@
                     <div class="rounded-md h-1/4 w-full bg-opacity-25 mb-5">
                         <p class="text-3xl font-semibold">
                             <router-link to="/Post/home">
-                                <!-- title:{{ postList[index].postTitle }} -->
+                                {{ postList[index].postTitle }}
                             </router-link>
                         </p>
                     </div>
-                    <div class="border-t-2 border-cyan-600 my-1"></div>
+                    <!-- <div class="border-t-2 border-cyan-600 my-1"></div> -->
                     <div class="rounded-md h-1/2 w-full bg-opacity-25 p-1">
                         <p class="text-md">
-                            <strong class="font-bold">user: </strong>
-                            content:
+                            <strong class="font-bold">{{ postList[index].userId }}</strong>
+                            :{{ postList[index].postContent }}
                         </p>
                     </div>
                 </div>

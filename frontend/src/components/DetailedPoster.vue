@@ -1,3 +1,0 @@
-<template id="detailed">
-
-</template>
