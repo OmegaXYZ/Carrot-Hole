@@ -144,16 +144,16 @@ export default {
             //console.log('响应数据：', response.data);
             //console.log('第一个的title:', response.data.postList[0].postTitle);
             this.postList = response.data.postList;
-            console.log(this.postList[0].postTitle);
+            //console.log(this.postList[0].postTitle);
         })
     },
     components: {
         PreviewPoster
     },
-    mounted() {
-        new Chart(document.getElementById('buyers-chart'), this.buyersData)
-        new Chart(document.getElementById('reviews-chart'), this.reviewsData)
-    },
+    // mounted() {
+    //     new Chart(document.getElementById('buyers-chart'), this.buyersData)
+    //     new Chart(document.getElementById('reviews-chart'), this.reviewsData)
+    // },
 
 }
 </script>
