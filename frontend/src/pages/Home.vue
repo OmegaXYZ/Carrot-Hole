@@ -17,34 +17,35 @@
         </nav>
         <!-- breadcrumb end -->
 
-            <div class="lg:flex justify-between items-center mb-6">
-              <p class="text-2xl font-semibold mb-2 lg:mb-0">早上好, 洛天依小姐!</p>
-              <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">
+        <div class="lg:flex justify-between items-center mb-6">
+            <p class="text-2xl font-semibold mb-2 lg:mb-0">早上好, 洛天依小姐!</p>
+            <button
+                class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">
                 <router-link to="/ReleasePost/home">
                     发布主题帖
                 </router-link>
-              </button>
-            </div>
-
-        <div v-for="(item, index) in 10" class="flex flex-wrap -mx-3 items-center justify-center">
-            <div class="h-35 w-full lg:w-4/5 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2">
-                <div class="rounded-md h-1/4 w-full bg-opacity-25 mb-5">
-                    <p class="text-3xl font-semibold">
-                        <router-link to="/Post/home">
-                            前往对应帖子详情页面
-                        </router-link>
-                    </p>
-                </div>
-                <div class="border-t-2 border-cyan-600 my-1"></div>
-                <div class="rounded-md h-1/2 w-full bg-opacity-25 p-1">
-                    <p class="text-md">
-                        <strong class="font-bold">user: </strong>
-                        post:content
-                    </p>
+            </button>
+        </div>
+        <div v-if="postList">
+            <div v-for="(item, index) in 10" class="flex flex-wrap -mx-3 items-center justify-center">
+                <div class="h-35 w-full lg:w-4/5 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2">
+                    <div class="rounded-md h-1/4 w-full bg-opacity-25 mb-5">
+                        <p class="text-3xl font-semibold">
+                            <router-link to="/Post/home">
+                                <!-- title:{{ postList[index].postTitle }} -->
+                            </router-link>
+                        </p>
+                    </div>
+                    <div class="border-t-2 border-cyan-600 my-1"></div>
+                    <div class="rounded-md h-1/2 w-full bg-opacity-25 p-1">
+                        <p class="text-md">
+                            <strong class="font-bold">user: </strong>
+                            content:
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-
 
 
     </div>
@@ -52,13 +53,16 @@
 
 <script>
 import { Chart } from 'chart.js'
-//import PreviewPoster from '../components/PreviewPoster.vue'
-
+import PreviewPoster from '../components/PreviewPoster.vue'
+import {
+    getPostListAPI,
+} from "../utils/request.js";
 
 export default {
     name: 'DashboardHome',
     data() {
         return {
+            postList: null,
             buyersData: {
                 type: 'line',
                 data: {
@@ -135,13 +139,21 @@ export default {
             }
         }
     },
+    created() {
+        getPostListAPI().then(response => {
+            //console.log('响应数据：', response.data);
+            //console.log('第一个的title:', response.data.postList[0].postTitle);
+            this.postList = response.data.postList;
+            console.log(this.postList[0].postTitle);
+        })
+    },
     components: {
         PreviewPoster
     },
     mounted() {
         new Chart(document.getElementById('buyers-chart'), this.buyersData)
         new Chart(document.getElementById('reviews-chart'), this.reviewsData)
-    }
+    },
 
 }
 </script>
