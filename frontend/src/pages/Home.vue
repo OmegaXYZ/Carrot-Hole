@@ -59,7 +59,7 @@ import {
 } from "../utils/request.js";
 
 export default {
-    name: 'DashboardHome',
+    name: 'Home',
     data() {
         return {
             postList: null,
