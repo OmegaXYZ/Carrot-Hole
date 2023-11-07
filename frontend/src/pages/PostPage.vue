@@ -18,23 +18,23 @@
         </nav>
 
         <div v-if="commentList">
-            <div v-for="(item,index) in commentList" class="flex flex-wrap -mx-3 items-center justify-center">
+            <div v-for="(item, index) in commentList" class="flex flex-wrap -mx-3 items-center justify-center">
                 <div
                     class="min-h-[10rem] w-full lg:w-5/6 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2 flex">
                     <!-- <div class="w-1/6 bg-opacity-25 bg-cyan-100 flex flex-col flex-wrap items-center justify-center"> -->
-                        <!-- <ul class="w-20 h-20 bg-cyan-100">
+                    <!-- <ul class="w-20 h-20 bg-cyan-100">
                             <img src="../../public/favicon.ico" alt="我是图片" class="w-full h-full object-cover inset-0">
                         </ul> -->
-                        <!-- <ul>{{ }}</ul> -->
+                    <!-- <ul>{{ }}</ul> -->
                     <!-- </div> -->
 
                     <div class="flex-grow flex flex-wrap p-3 whitespace-pre-line">
                         <!-- <p> 大家什么时候举办线下聚会？一群猪他飞上了天 一群海盗淹死在沙滩 我的儿子倍做成了金钱，摇曳的花枯萎在河岸哪。。。允许我家的佣人先富起来</p> -->
-                        <p> {{ commentList[index].commentContent}}</p>
+                        <p> {{ commentList[index].commentContent }}</p>
                         <!-- <div class="border-t-2 border-cyan-600"></div> -->
-                        <div class="w-full border-t-2 border-cyan-600"></div>
+                        <!-- <div class="w-full border-t-2 border-cyan-600"></div> -->
                         <div class="mt-auto flex justify-end">
-                            <p>{{ index}}楼 {{ }}</p>
+                            <p>{{ index }}楼 {{ }}</p>
                         </div>
 
                     </div>
@@ -70,10 +70,22 @@ import {
     getPostCommentListAPI,
 } from "../utils/request.js";
 
+// 获取当前页面的路径
+const currentPath = window.location.pathname;
+
+// 使用正则表达式提取最后一个斜杠后的信息
+const match = currentPath.match(/\/([^/]+)\/?$/);
+
+// 获取匹配的信息
+const lastSegment = match ? match[1] : null;
+
+console.log("最后一个斜杠后的信息:", lastSegment);
+
 export default {
     name: 'PostPage',
 
     data() {
+
         return {
             commentList: null,
             ShowReviewPart: true,
@@ -158,14 +170,14 @@ export default {
         FullPoster
     },
     created() {
-        getPostCommentListAPI(0).then(response => {
+        getPostCommentListAPI(lastSegment).then(response => {
             console.log('响应数据：', response.data.commentList);
             this.commentList = response.data.commentList;
         })
         // this.getPostById();
         // this.getPostList();
         // this.getPostCommentList();
-    },
+    }
     // mounted() {
     //     new Chart(document.getElementById('buyers-chart'), this.buyersData)
     //     new Chart(document.getElementById('reviews-chart'), this.reviewsData)

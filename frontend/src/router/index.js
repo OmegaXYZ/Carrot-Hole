@@ -12,7 +12,7 @@ import LoginPage from "@/components/LoginPage.vue"
 import test from '@/pages/test.vue'
 
 // /dashboard/home
-// /post/home
+// /post/home/:{{post}}
 const routerPath = [
     { path: '/', redirect: { name: 'Home' } },
     { path: '/dashboard', component: HomePage, children: [
@@ -22,7 +22,7 @@ const routerPath = [
     },
     { path: '/Post', component: HomePage, children: [
         { path: '/', redirect: { name: 'PostPage' } },
-        { path: 'home', name: 'PostPage', component: PostPage},
+        { path: 'home/:id', name: 'PostPage', component: PostPage},
         { path: 'test', name: 'test', component: test}
       ]
     },

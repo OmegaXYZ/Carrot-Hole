@@ -31,7 +31,8 @@
                 <div class="h-35 w-full lg:w-4/5 rounded-md border border-sky-400 bg-opacity-25 bg-cyan-40 p-3 m-2">
                     <div class="rounded-md h-1/4 w-full bg-opacity-25 mb-5">
                         <p class="text-3xl font-semibold">
-                            <router-link to="/Post/home">
+                            <!-- <router-link :to="{ name: 'user-profile', params: { id: 123 }}" class="user-link">User Profile</router-link> -->
+                            <router-link :to="{ name: 'PostPage', params: { id: index }}" class="user-link">
                                 {{ postList[index].postTitle }}
                             </router-link>
                         </p>
@@ -63,6 +64,7 @@ export default {
     data() {
         return {
             postList: null,
+
             buyersData: {
                 type: 'line',
                 data: {
