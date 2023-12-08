@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://1.94.32.182:3306/carrot_hole?serverTimezone=UTC&useSSL=false
+    username: root
+mybatis-plus:
+  type-aliases-package: com.hust23se.carrothole.entity #实体类取别名
+  configuration:
+    map-underscore-to-camel-case: true
+mybatis:
+  type-aliases-package: com.hust23se.carrothole.entity #实体类取别名
+#  configuration:
+#    ## 下划线转驼峰配置
+#    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
+logging:
+  level:
+    root: info
+    com.hust23se.carrothole: debug
+  file:
+    path: logs
+server:
+  port: 8080
