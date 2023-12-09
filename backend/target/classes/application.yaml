@@ -1,8 +1,8 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 1563081082
-    url: jdbc:mysql://localhost:3306/carrot_hole?serverTimezone=UTC&useSSL=false
+    password: root
+    url: jdbc:mysql://1.94.32.182:3306/carrot_hole?serverTimezone=UTC&useSSL=false
     username: root
 mybatis-plus:
   type-aliases-package: com.hust23se.carrothole.entity #实体类取别名
